@@ -46,19 +46,16 @@ class Register(Resource):
         new_student.save()
 
 
-class Scoreboard(Resource):
-    def get(self):
-        result = []
-        table = db_connect.get_table(db)
-        students_data = table.all()
-        for row in students_data:
-            result.append(dict(row))
+@app.route("/")
+def scoreboard():
+    result = []
+    table = db_connect.get_table(db)
+    students_data = table.all()
+    for row in students_data:
+        result.append(dict(row))
 
-        return render_template('scoreboard.html', score=result)
-       
-#        return students_data
+    return render_template('scoreboard.html', score=result)
         
-api.add_resource(Scoreboard, '/', '/scoreboard/')
 api.add_resource(Register, '/register')
 #api.add_resource(Students, '/students')
 
