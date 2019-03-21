@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 flask-restful = "*"
 dataset = "*"
+flask-jsonpify = "*"
+flask-table = "*"
 
 [dev-packages]
 

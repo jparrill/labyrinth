@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Labyrinth Scoreboard</title>
+    </head>
+    <body>
+        <h2>Labyrinth Scoreboard</h2>
+ 
+        <p><p>
+        <table>
+            {% for row in score %}
+            <TR>
+                <TD class="Name">{{ row.i_name }}</TD>
+                <TD class="Domain">{{ row.i_domain }}</TD>
+                <TD class="Magic Key">{{ row.i_magic_key }}</TD>
+                <TD class="Step">{{ row.step }}</TD>
+                <TD class="Points">{{ row.points }}</TD>
+            </TR>
+            {% endfor %}
+        </table>
+    </body>
+</html>
